@@ -1,0 +1,25 @@
+{
+  "name": "vuttr_back_end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/app.ts"
+  },
+  "description": "Desafio Back-End",
+  "repository": "https://github.com/WarleyCoutinho/Desafio-Back-End.git",
+  "author": "Warley Coutinho",
+  "private": false,
+  "dependencies": {
+    "@prisma/client": "4.4.0",
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.7.23",
+    "express": "^4.18.1",
+    "install": "^0.13.0",
+    "prisma": "^4.4.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
+}
