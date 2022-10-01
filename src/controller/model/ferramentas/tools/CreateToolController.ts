@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { CreateToolService } from '../../services/tools/CreateToolService';
+import { CreateToolService } from '../../../../services/model/ferramentas/tools/CreateToolService';
 
 export class CreateToolController {
   async handle(request: Request, response: Response) {

@@ -1,5 +1,5 @@
-import ICreateToolDTO from '../../controller/tools/dtos/iCreateToolDTO';
-import { prisma } from '../../database/prismaClient';
+import ICreateToolDTO from '../../../../controller/model/ferramentas/dtos/iCreateToolDTO';
+import { prisma } from '../../../../database/prismaClient';
 
 export class CreateToolService {
   async execute({
