@@ -21,5 +21,5 @@ function normalizaPort(val: any) {
 }
 
 app.listen(port, () => {
-  console.log(`Desafio Back-End - "Server is runnig 🚀", na porta ${port}.`);
+  console.log(`Desafio Back-End - "🚀 Server is runnig!", na porta ${port}.`);
 });
