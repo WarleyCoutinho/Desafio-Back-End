@@ -1,8 +1,7 @@
-import ICreateToolDTO from '../../../../controller/model/ferramentas/dtos/iCreateToolDTO';
+import { Tool } from '@prisma/client';
 import { prisma } from '../../../../database/prismaClient';
-
 export class GetAllToolService {
-  async execute(): Promise<ICreateToolDTO[]> {
+  async execute(): Promise<Error | Tool[]> {
     const tools = await prisma.tool.findMany();
     return tools;
   }

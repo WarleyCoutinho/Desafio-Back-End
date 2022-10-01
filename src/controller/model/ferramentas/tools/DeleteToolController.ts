@@ -10,6 +10,6 @@ export class DeleteToolController {
       id,
     });
 
-    return response.json(deleteTool);
+    return response.status(204).json({ deleteTool });
   }
 }
