@@ -14,6 +14,6 @@ export class UpdateToolController {
       tags,
     });
 
-    return response.status(201).json({ updateTool });
+    return response.status(200).json({ updateTool });
   }
 }
