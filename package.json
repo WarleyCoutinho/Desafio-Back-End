@@ -1,10 +1,11 @@
 {
-  "name": "project-back",
+  "name": "vuttr_back_end",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "description": "Desafio Back-End",
+  "repository": "https://github.com/WarleyCoutinho/Desafio-Back-End.git",
+  "author": "Warley Coutinho",
+  "private": "false",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

@@ -1,0 +1,185 @@
+FORMAT: 1A
+HOST: http://localhost:3000
+
+# VUTTR (Very Useful Tools to Remember)
+A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
+
+
+# Group Ferramentas
+
+## Ferramentas [/tools{?tag}]
+Realiza uma busca de ferramentas pela tag, usando da seguinte forma: /tools?tag=node
++ Parameters
+    + tag (string) - Filtra as ferramentas pela tag
+
+
+
+### Listar todas as ferramentas [GET]
+   
++ Response 200
+
+       [
+{
+"id": 1,
+"title": "Node.js e TypeScript ORM de última geração",
+"links": "https://www.prisma.io",
+"descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
+"tags": [
+"Node.js",
+"TypeScript",
+"PostgreSQL",
+"Next-generation ",
+"ORM"
+],
+"createdAt": "2022-10-02T00:00:21.445Z",
+"updatedAt": "2022-10-02T00:00:21.445Z"
+},
+{
+"id": 2,
+"title": "TypeScript é JavaScript com sintaxe para tipos.",
+"links": "https://www.prisma.io",
+"descriptions": "TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.",
+"tags": [
+"TypeScript"
+],
+"createdAt": "2022-10-02T00:02:43.292Z",
+"updatedAt": "2022-10-02T00:02:43.292Z"
+},
+{
+"id": 3,
+"title": "Node.js.",
+"links": "https://www.prisma.io",
+"descriptions": "Como um tempo de execução JavaScript assíncrono orientado a eventos, o Node.js foi projetado para criar aplicativos de rede escaláveis.",
+"tags": [
+"Node.js"
+],
+"createdAt": "2022-10-02T00:05:39.405Z",
+"updatedAt": "2022-10-02T00:05:39.405Z"
+},
+{
+"id": 4,
+"title": "PostgreSQL.",
+"links": "https://www.prisma.io",
+"descriptions": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
+"tags": [
+"PostgreSQL"
+],
+"createdAt": "2022-10-02T00:07:05.643Z",
+"updatedAt": "2022-10-02T00:07:05.643Z"
+}
+]
+
+### Criar ferramenta [POST]
++ tags (array[string]) - Coleção de tags
+
++ Request (application/json)
+
+         {
+  "title":"Node.js e TypeScript ORM de última geração",
+  "links":"https://www.prisma.io",
+  "descriptions":"O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
+  "tags":["Node.js","TypeScript","PostgreSQL","Next-generation ","ORM"]
+  }
+
++ Response 201
+    + Body
+
+          {
+    "result": {
+        "id": 1,
+        "title": "Node.js e TypeScript ORM de última geração",
+        "links": "https://www.prisma.io",
+        "descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
+        "tags": [
+            "Node.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Next-generation ",
+            "ORM"
+        ],
+        "createdAt": "2022-10-02T01:09:57.822Z",
+        "updatedAt": "2022-10-02T01:09:57.822Z"
+    }
+}
+
++ Response 400
+    + Body
+
+            {
+                "error": "Mensagem de erro"
+            }
+
+## Ferramenta [/tools/{id}]
+Realiza operações de busca de uma ferramenta de acordo com o id utilizado na url. Ex: /tools/1
+
++ Parameters
+    + id: 4 (number) - Um unico identificador da ferramenta.
+
+### Listar a feramenta [GET]
+   
+
+
++ Response 200
+
+        {
+    "getIdTool": {
+        "id": 4,
+        "title": "PostgreSQL.",
+        "links": "https://www.prisma.io",
+        "descriptions": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
+        "tags": [
+            "PostgreSQL"
+        ],
+        "createdAt": "2022-10-02T00:07:05.643Z",
+        "updatedAt": "2022-10-02T00:07:05.643Z"
+    }
+}
+
++ Response 400
+
+    + Body
+
+            {
+                "error": "Mensagem de erro"
+            }
+
+### Atualizar a feramenta [PUT]
+   
+
++ Response 200
+
+        {
+  "updateTool": {
+  "id": 1,
+  "title": "Node.js e TypeScript ORM de última geração",
+  "links": "https://www.prisma.io",
+  "descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
+  "tags": [
+  "Node.js",
+  "TypeScript",
+  "PostgreSQL"
+  ],
+  "createdAt": "2022-10-02T00:00:21.445Z",
+  "updatedAt": "2022-10-02T00:14:52.063Z"
+  }
+  }
+
++ Response 400
+    + Body
+
+            {
+                "error": "Mensagem de erro"
+            }
+
+
+### Deletar a feramenta [DELETE]
+   
+
++ Response 204
+
++ Response 400
+    + Body
+
+            {
+                "error": "Mensagem de erro"
+            }
