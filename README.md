@@ -8,7 +8,7 @@ Sua tarefa é construir uma API e banco de dados para a aplicação VUTTR (Very 
 
 ### Requisitos
 
-Ter instalado pelo menos um gerenciador de pacotes do Node,
+Ter instalado um gerenciador de pacotes do Node,
 
 - [Node.js](https://nodejs.org/)
   [Npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/).
@@ -36,11 +36,12 @@ yarn prisma gerenete
 DATABASE_URL="postgresql://postgres:Avl@2023@127.0.0.1:5432/vuttr/?schema=public"
 ```
 
-obs: Atualizar variaveis de abientes conforme as que estao no seu banco de bados.
-6- depois abrir o docker onde esta seu banco de dados ou na sua maquinha onde esta
-o seu banco e criar a nome do banco ex: vuttr ou simplesmente execultar o sequinte comando
-que automaticamente ele conecta ao seu banco e e ja cria o banco com a tabela se tiver
-passado todos os parametos na variavel de anbiente .env
+obs: Atualizar variáveis de ambientes conforme as que estão no seu banco de bados.
+
+6- depois abrir o docker onde está seu banco de dados ou na sua máquina onde está
+o seu banco e criar a nome do banco ex: vuttr ou simplesmente executar o seguinte comando abaixo,
+que automaticamente ele conecta ao seu banco ele já cria o banco com a tabela se tiver
+passado todos os parâmetros na variável de ambiente .env
 
 ```
 yarn prisma migrate dev
@@ -57,126 +58,28 @@ yarn start:dev
 - A aplicação executa em http://localhost/3000
 - `/tools?tag=TypeScript -> utilizando o método GET nessa rota irá listar todas ferramentas que tem a tag 'TypeScript'`
 
-  ° GET http://localhost:3000/tools/tags - Listar por tags
-  {
-  "getTagsTool": {
-  "id": 2,
-  "title": "TypeScript é JavaScript com sintaxe para tipos.",
-  "links": "https://www.prisma.io",
-  "descriptions": "TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.",
-  "tags": [
-  "TypeScript"
-  ],
-  "createdAt": "2022-10-02T00:02:43.292Z",
-  "updatedAt": "2022-10-02T00:02:43.292Z"
-  }
-  }
+  ° GET http://localhost:3000/tools/:tags - Listar por tags
 
 - `/tools -> utilizando o método POST nessa rota irá criar uma ferramenta `
   ° POST http://localhost:3000/tools - Criar Ferramentas
-  {
-  "title":"Node.js e TypeScript ORM de última geração",
-  "links":"https://www.prisma.io",
-  "descriptions":"O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
-  "tags":["Node.js","TypeScript","PostgreSQL","Next-generation ","ORM"]
-  }
+
 - `/tools -> utilizando o método GET nessa rota irá listar todas as ferramentas `
   ° GET http://localhost:3000/tools - Listar todas as ferramentas cadastradas no banco.
-  [
-  {
-  "id": 1,
-  "title": "Node.js e TypeScript ORM de última geração",
-  "links": "https://www.prisma.io",
-  "descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
-  "tags": [
-  "Node.js",
-  "TypeScript",
-  "PostgreSQL",
-  "Next-generation ",
-  "ORM"
-  ],
-  "createdAt": "2022-10-02T00:00:21.445Z",
-  "updatedAt": "2022-10-02T00:00:21.445Z"
-  },
-  {
-  "id": 2,
-  "title": "TypeScript é JavaScript com sintaxe para tipos.",
-  "links": "https://www.prisma.io",
-  "descriptions": "TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.",
-  "tags": [
-  "TypeScript"
-  ],
-  "createdAt": "2022-10-02T00:02:43.292Z",
-  "updatedAt": "2022-10-02T00:02:43.292Z"
-  },
-  {
-  "id": 3,
-  "title": "Node.js.",
-  "links": "https://www.prisma.io",
-  "descriptions": "Como um tempo de execução JavaScript assíncrono orientado a eventos, o Node.js foi projetado para criar aplicativos de rede escaláveis.",
-  "tags": [
-  "Node.js"
-  ],
-  "createdAt": "2022-10-02T00:05:39.405Z",
-  "updatedAt": "2022-10-02T00:05:39.405Z"
-  },
-  {
-  "id": 4,
-  "title": "PostgreSQL.",
-  "links": "https://www.prisma.io",
-  "descriptions": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
-  "tags": [
-  "PostgreSQL"
-  ],
-  "createdAt": "2022-10-02T00:07:05.643Z",
-  "updatedAt": "2022-10-02T00:07:05.643Z"
-  }
-  ]
-- `/tools/1 -> utilizando o método GET nessa rota irá listar a ferramenta de acordo com o id que foi informado`
+- `/tools/:id -> utilizando o método GET nessa rota irá listar a ferramenta de acordo com o id que foi informado`
 
-° GET http://localhost:3000/tools/4 - Listar ferramenta por Id.
+° GET http://localhost:3000/tools/:id - Listar ferramenta por Id.
 
-{
-"getIdTool": {
-"id": 4,
-"title": "PostgreSQL.",
-"links": "https://www.prisma.io",
-"descriptions": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
-"tags": [
-"PostgreSQL"
-],
-"createdAt": "2022-10-02T00:07:05.643Z",
-"updatedAt": "2022-10-02T00:07:05.643Z"
-}
-}
+- `/tools/:id -> utilizando o método PUT nessa rota irá alterar uma ferramenta de acordo com o id que foi informado`
+  ° PUT http://localhost:3000/tools/:id - Atualizar a ferramenta conforme o campo que desejar
+- `/tools/:id -> utilizando o método DELETE nessa rota irá excluir a ferramenta de acordo com o id que foi informado`
 
-- `/tools/1 -> utilizando o método PUT nessa rota irá alterar uma ferramenta de acordo com o id que foi informado`
-  ° PUT http://localhost:3000/tools/1 - Atualizar a ferramenta conforme o campo que desejar
-  {
-  "updateTool": {
-  "id": 1,
-  "title": "Node.js e TypeScript ORM de última geração",
-  "links": "https://www.prisma.io",
-  "descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
-  "tags": [
-  "Node.js",
-  "TypeScript",
-  "PostgreSQL"
-  ],
-  "createdAt": "2022-10-02T00:00:21.445Z",
-  "updatedAt": "2022-10-02T00:14:52.063Z"
-  }
-  }
-  nesse explo acima so atualizei as tags!
+° DELETE http://localhost:3000/tools/:id - Apagarar a ferramaenta conforme o id que passar.
 
-- `/tools/1 -> utilizando o método DELETE nessa rota irá excluir a ferramenta de acordo com o id que foi informado`
-
-° DELETE http://localhost:3000/tools/:1 - Apagarar a ferramaenta conforme o id que passar.
 Para mais informaçoes de como utilizar essas rotas e quais parâmetros utilizar, tem a documentação da API, que se encontra dentro da pasta do projeto, no arquivo de **api.apib**
 
 ## 🔧 Executando os testes
 
-```sh
+```
 yarn test
 ```
 
@@ -225,5 +128,3 @@ Para essa aplicação, implementei os seguintes testes:
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->

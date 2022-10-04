@@ -14,60 +14,6 @@ Realiza uma busca de ferramentas pela tag, usando da seguinte forma: /tools?tag=
 
 
 
-### Listar todas as ferramentas [GET]
-   
-+ Response 200
-
-       [
-{
-"id": 1,
-"title": "Node.js e TypeScript ORM de última geração",
-"links": "https://www.prisma.io",
-"descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
-"tags": [
-"Node.js",
-"TypeScript",
-"PostgreSQL",
-"Next-generation ",
-"ORM"
-],
-"createdAt": "2022-10-02T00:00:21.445Z",
-"updatedAt": "2022-10-02T00:00:21.445Z"
-},
-{
-"id": 2,
-"title": "TypeScript é JavaScript com sintaxe para tipos.",
-"links": "https://www.prisma.io",
-"descriptions": "TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.",
-"tags": [
-"TypeScript"
-],
-"createdAt": "2022-10-02T00:02:43.292Z",
-"updatedAt": "2022-10-02T00:02:43.292Z"
-},
-{
-"id": 3,
-"title": "Node.js.",
-"links": "https://www.prisma.io",
-"descriptions": "Como um tempo de execução JavaScript assíncrono orientado a eventos, o Node.js foi projetado para criar aplicativos de rede escaláveis.",
-"tags": [
-"Node.js"
-],
-"createdAt": "2022-10-02T00:05:39.405Z",
-"updatedAt": "2022-10-02T00:05:39.405Z"
-},
-{
-"id": 4,
-"title": "PostgreSQL.",
-"links": "https://www.prisma.io",
-"descriptions": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
-"tags": [
-"PostgreSQL"
-],
-"createdAt": "2022-10-02T00:07:05.643Z",
-"updatedAt": "2022-10-02T00:07:05.643Z"
-}
-]
 
 ### Criar ferramenta [POST]
 + tags (array[string]) - Coleção de tags
@@ -84,22 +30,19 @@ Realiza uma busca de ferramentas pela tag, usando da seguinte forma: /tools?tag=
 + Response 201
     + Body
 
-          {
-    "result": {
-        "id": 1,
-        "title": "Node.js e TypeScript ORM de última geração",
-        "links": "https://www.prisma.io",
-        "descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
-        "tags": [
-            "Node.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Next-generation ",
-            "ORM"
-        ],
-        "createdAt": "2022-10-02T01:09:57.822Z",
-        "updatedAt": "2022-10-02T01:09:57.822Z"
-    }
+         {
+    "id": "a1e242dc-33d7-4650-b93a-900f8927924e",
+    "title": "Node.js e TypeScript ORM de última geração ",
+    "link": "https://www.prisma.io",
+    "description": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
+    "tags": [
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Next-generation ",
+        "ORM"
+    ]
+}
 }
 
 + Response 400
@@ -108,6 +51,73 @@ Realiza uma busca de ferramentas pela tag, usando da seguinte forma: /tools?tag=
             {
                 "error": "Mensagem de erro"
             }
+
+
+
+### Listar todas as ferramentas [GET]
+   
++ Response 200
+
+[
+    {
+        "id": "52c0dcce-7f10-4955-8190-77d28be2622f",
+        "title": "Node.js e TypeScript ORM de última geração",
+        "link": "https://www.prisma.io",
+        "description": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
+        "tags": [
+            "Node.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Next-generation ",
+            "ORM"
+        ]
+    },
+    {
+        "id": "d0331b25-a88f-4827-8571-fe4de70ed06c",
+        "title": "TypeScript é JavaScript com sintaxe para tipos.",
+        "link": "https://www.prisma.io",
+        "description": "TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.",
+        "tags": [
+            "TypeScript"
+        ]
+    },
+    {
+        "id": "47e3502f-3ef3-4a7f-8393-4bee6ae1d7b8",
+        "title": "Node.js.",
+        "link": "https://www.prisma.io",
+        "description": "Como um tempo de execução JavaScript assíncrono orientado a eventos, o Node.js foi projetado para criar aplicativos de rede escaláveis.",
+        "tags": [
+            "Node.js"
+        ]
+    },
+    {
+        "id": "78818fa7-73e7-40ad-9eb8-e43e247495dc",
+        "title": "PostgreSQL.",
+        "link": "https://www.prisma.io",
+        "description": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
+        "tags": [
+            "PostgreSQL"
+        ]
+    },
+    {
+        "id": "354bb861-6439-43cc-8041-4883d4da8b29",
+        "title": "Warley Coutinho ",
+        "link": "https://www.linkedin.com/in/coutinho-warley/",
+        "description": "Soft Skills,Trabalho em equipe,Conhecimento em metolodologias ágeis,Resiliência e entrega,Boa comunicação com cliente e squad,Hard Skills,Lógica de programação,JavaScript,NodeJs,VueJs,FullStack,Scrum, Kanban,Já trabalhei em desenvolvimento de Data Science, projetos de grande escala, banco de dados estruturado e Microsserviços.Além de trabalhar com sistema de metodologias ágeis, atuando diretamente na formação de Sprints, testes brutos, qualificação e finalização de etapas do software",
+        "tags": [
+            "PostgreSQL"
+        ]
+    },
+    {
+        "id": "7bef9ca0-a4cc-4875-9966-29e94054dc6c",
+        "title": "Nest Js ",
+        "link": "https://docs.nestjs.com/",
+        "description": "IntroductionNest (NestJS) is a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript, is built with and fully supports TypeScript (yet still enables developers to code in pure JavaScript) and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).",
+        "tags": [
+            "Framework"
+        ]
+    }
+]
 
 ## Ferramenta [/tools/{id}]
 Realiza operações de busca de uma ferramenta de acordo com o id utilizado na url. Ex: /tools/1
@@ -121,18 +131,15 @@ Realiza operações de busca de uma ferramenta de acordo com o id utilizado na u
 
 + Response 200
 
-        {
-    "getIdTool": {
-        "id": 4,
-        "title": "PostgreSQL.",
-        "links": "https://www.prisma.io",
-        "descriptions": "O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código aberto que usa e estende a linguagem SQL combinada com muitos recursos que armazenam e dimensionam com segurança as cargas de trabalho de dados mais complicadas. As origens do PostgreSQL remontam a 1986 como parte do projeto POSTGRES na Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo na plataforma principal.",
-        "tags": [
-            "PostgreSQL"
-        ],
-        "createdAt": "2022-10-02T00:07:05.643Z",
-        "updatedAt": "2022-10-02T00:07:05.643Z"
-    }
+       {
+    "id": "354bb861-6439-43cc-8041-4883d4da8b29",
+    "title": "Warley Coutinho ",
+    "link": "https://www.linkedin.com/in/coutinho-warley/",
+    "description": "Soft Skills,Trabalho em equipe,Conhecimento em metolodologias ágeis,Resiliência e entrega,Boa comunicação com cliente e squad,Hard Skills,Lógica de programação,JavaScript,NodeJs,VueJs,FullStack,Scrum, Kanban,Já trabalhei em desenvolvimento de Data Science, projetos de grande escala, banco de dados estruturado e Microsserviços.Além de trabalhar com sistema de metodologias ágeis, atuando diretamente na formação de Sprints, testes brutos, qualificação e finalização de etapas do software",
+    "tags": [
+        "PostgreSQL"
+    ]
+     }
 }
 
 + Response 400
@@ -147,22 +154,21 @@ Realiza operações de busca de uma ferramenta de acordo com o id utilizado na u
    
 
 + Response 200
-
-        {
-  "updateTool": {
-  "id": 1,
-  "title": "Node.js e TypeScript ORM de última geração",
-  "links": "https://www.prisma.io",
-  "descriptions": "O Prisma desbloqueia um novo nível de experiência do desenvolvedor ao trabalhar com bancos de dados graças ao seu modelo de dados intuitivo, migrações automatizadas, segurança de tipo e preenchimento automático.",
-  "tags": [
-  "Node.js",
-  "TypeScript",
-  "PostgreSQL"
-  ],
-  "createdAt": "2022-10-02T00:00:21.445Z",
-  "updatedAt": "2022-10-02T00:14:52.063Z"
-  }
-  }
+{
+    "id": "354bb861-6439-43cc-8041-4883d4da8b29",
+    "title": "Warley Coutinho Pereira dos Santos ",
+    "link": "https://www.linkedin.com/in/coutinho-warley/",
+    "description": "Alterando so a Description",
+    "tags": [
+        "PostgreSQL",
+        "JavaScript",
+        "NodeJs",
+        "VueJs",
+        "FullStack",
+        "Scrum",
+        "Kanban"
+    ]
+}
 
 + Response 400
     + Body

@@ -28,11 +28,11 @@ export class ToolController {
   async findAll() {
     return this.toolService.findAll();
   }
-  // LISTAR POR TAGS
-  @Get(':tags')
-  async getFilteredTags(@Param('tags') tags: string, @Body() data: ToolDTO) {
-    return this.toolService.getFilteredTags(tags, data);
-  }
+  // // LISTAR POR TAGS
+  // @Get(':tags')
+  // async getFilteredTags(@Param('tags') tags: string, @Body() data: ToolDTO) {
+  //   return this.toolService.getFilteredTags(tags, data);
+  // }
   //LISTAR POR ID
   @Get(':id')
   async filters(@Param('id') id: string, @Body() data: ToolDTO) {
