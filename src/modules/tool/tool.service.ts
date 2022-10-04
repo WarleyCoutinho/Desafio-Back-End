@@ -7,14 +7,14 @@ export class ToolService {
   constructor(private prisma: PrismaService) {}
   // CREATE TOOL
   async create(data: ToolDTO) {
-    // const toolExixts = await this.prisma.tool.findFirst({
-    //   where: {
-    //     id: data.id,
-    //   },
-    // });
-    // if (toolExixts) {
-    //   throw new Error('Tool already exists;');
-    // }
+    const toolExixts = await this.prisma.tool.findFirst({
+      where: {
+        id: data.id,
+      },
+    });
+    if (!toolExixts) {
+      throw new Error('Tool already exists;');
+    }
     const tool = await this.prisma.tool.create({
       data,
     });
@@ -41,6 +41,12 @@ export class ToolService {
       },
     });
   }
+
+  //LISTAR POR TAGS
+  async getFilteredTags(tags: string, data: ToolDTO) {
+    return await this.prisma.tool.findMany();
+  }
+
   // ATUALIZAR
   async update(id: string, data: ToolDTO) {
     const toolExixts = await this.prisma.tool.findUnique({

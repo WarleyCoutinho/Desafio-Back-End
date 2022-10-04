@@ -18,10 +18,20 @@ export class ToolController {
   async create(@Body() data: ToolDTO) {
     return this.toolService.create(data);
   }
+  // @Post()
+  // @ApiResponse({ status: 201, description: 'The record has been successfully created.'})
+  // async create(@Body() data: ToolDTO) {
+  //   return this.toolService.create(data);
+  // }
   // LISTA TODOS
   @Get()
   async findAll() {
     return this.toolService.findAll();
+  }
+  // LISTAR POR TAGS
+  @Get(':tags')
+  async getFilteredTags(@Param('tags') tags: string, @Body() data: ToolDTO) {
+    return this.toolService.getFilteredTags(tags, data);
   }
   //LISTAR POR ID
   @Get(':id')
@@ -36,6 +46,8 @@ export class ToolController {
   }
   @Delete(':id')
   async delete(@Param('id') id: string) {
-    return this.toolService.delete(id);
+    return this.toolService.delete(id)
+      ? 'Registro Deletado com Sucesso'
+      : 'Não foi Possivel Apagar';
   }
 }
