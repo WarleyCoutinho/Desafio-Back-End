@@ -1,0 +1,194 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Desafio Back-End- VUTTR (Very Useful Tools to Remember).",
+    "description": "A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.",
+    "contact": {
+      "email": "warleycoutinho@icloud.com"
+    },
+    "linkedin": "https://www.linkedin.com/in/coutinho-warley"
+  },
+
+  "host": "localhost:3000",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "schemes": ["http"],
+  "paths": {
+    "/tools": {
+      "post": {
+        "tags": ["Tools"],
+        "summary": "Adicionar uma ferramenta à lista",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Warley Coutinho"
+                },
+                "link": {
+                  "type": "string",
+                  "example": "https://www.linkedin.com/in/coutinho-warley"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Soft Skills,Trabalho em equipe,Conhecimento em metolodologias ágeis,Resiliência e entrega,Boa comunicação com cliente e squad,Hard Skills,Lógica de programação,JavaScript,NodeJs,VueJs,FullStack,Scrum, Kanban,Já trabalhei em desenvolvimento de Data Science, projetos de grande escala, banco de dados estruturado e Microsserviços.Além de trabalhar com sistema de metodologias ágeis, atuando diretamente na formação de Sprints, testes brutos, qualificação e finalização de etapas do software"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "JavaScript,NodeJs,VueJs,FullStack,Scrum, Kanban"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error"
+          },
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Tool"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Tools"],
+        "summary": "Retorna uma lista de ferramentas",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "description": "Encontre uma ferramenta específica por título ou tags.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tags_like",
+            "description": "Encontre uma ferramenta específica apenas por tags",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error"
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Tool"
+            }
+          }
+        }
+      }
+    },
+    "/tools/:id": {
+      "put": {
+        "tags": ["Tools"],
+        "summary": "Atualizar uma ferramenta da lista.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "Warley Coutinho Pereira dos Santos"
+                },
+                "link": {
+                  "type": "string",
+                  "example": "https://www.linkedin.com/in/coutinho-warley"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Soft Skills,Trabalho em equipe,Conhecimento em metolodologias ágeis."
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "JavaScript,NodeJs,VueJs,FullStack,Scrum, Kanban"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Error"
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Tool"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Tools"],
+        "summary": "Excluir uma lista de ferramentas",
+        "responses": {
+          "500": {
+            "description": "Error"
+          },
+          "204": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Tool" }
+          }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "Tool": {
+      "type": "object",
+      "properties": {
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "354bb861-6439-43cc-8041-4883d4da8b29"
+              },
+              "title": {
+                "type": "string",
+                "example": "Warley Coutinho Pereira dos Santos"
+              },
+              "link": {
+                "type": "string",
+                "example": "https://www.linkedin.com/in/coutinho-warley"
+              },
+              "description": {
+                "type": "string",
+                "example": "Soft Skills,Trabalho em equipe,Conhecimento em metolodologias ágeis."
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "JavaScript,NodeJs,VueJs,FullStack,Scrum, Kanban"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
