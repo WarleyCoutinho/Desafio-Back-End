@@ -33,10 +33,18 @@ export class ToolService {
     });
   }
 
-  // //LISTAR POR TAGS
-  // async getFilteredTags(tags: string, data: ToolDTO) {
-  //   return await this.prisma.tool.findMany();
-  // }
+  // LISTA TODOS OU POR TAGS_LIKE
+  async getFilteredTags({ q, tags_like }) {
+    let filters = {};
+
+    if (q) {
+      filters = [{ title: new RegExp(q, 'i') }, { tags: new RegExp(q, 'i') }];
+    } else if (tags_like) {
+      filters = new RegExp(tags_like, 'i');
+    }
+
+    return this.prisma.tool.findFirst();
+  }
 
   // ATUALIZAR
   async update(id: string, data: ToolDTO) {
