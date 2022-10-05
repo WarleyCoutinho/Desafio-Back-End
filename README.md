@@ -1,5 +1,7 @@
 # Desafio-Back-End
 
+Este projeto é um desafio proposto pela [Kingspan Isoeste](https://kingspan-isoeste.com.br)
+
 # VUTTR (Very Useful Tools to Remember - Ferramentas muito úteis para lembrar)
 
 Sua tarefa é construir uma API e banco de dados para a aplicação VUTTR (Very Useful Tools to Remember).A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
@@ -13,35 +15,46 @@ Ter instalado um gerenciador de pacotes do Node,
 - [Node.js](https://nodejs.org/)
   [Npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/).
 
-## Para utilizar o projeto ## 🏁 Iniciando
+## Para utilizar o projeto
+
+## 🏁 Iniciando
+
+## `Como usar`
 
 1. Faça o seguinte [comando](https://yarnpkg.com/getting-started/install) após instalar o node, para executar o projeto com o gerenciador de pacotes [Yarn](https://yarnpkg.com/)
 2. Após isso poderá fazer o download do projeto através do zip: https://github.com/WarleyCoutinho/Desafio-Back-End ou então realizando o clone do repositório https://github.com/WarleyCoutinho/Desafio-Back-End.git
+
 3. Acessar a pasta onde salvou os arquivos e executar o comando abaixo para executar o projeto. Esse comando ira baixar todas as dependenias da aplicação.
+
+- > **Executando:**
+- > **Baixar Dependências:**
 
 ```
 yarn
 ```
 
 4.Depois execulta esse comando para iniciar o prisma com suas dependenias para configurar
-um banco de dados Postgres com 1 tabelas: A de ferramentas.
+um banco de dados Postgres com 1 tabelas: A de tools.
 
 ```
 yarn prisma gerenete
 ```
 
-5.Cria um arquivo .env na raiz do projeto com as sequintes informações abaixo.
+- > **Configurar as variáveis de ambiente:**
+  > 5.Crie um arquivo `".env"` na raiz do projeto, também na raiz do projeto existe um arquivo `".env-example"`, copie o que está lá dentro para o seu arquivo `".env"`
 
-```
-DATABASE_URL="postgresql://postgres:Avl@2023@127.0.0.1:5432/vuttr/?schema=public"
-```
+## `DATABASE_URL="postgresql://postgres:Vuttr@2023@127.0.0.1:5432/vuttr/?schema=public"`
 
-obs: Atualizar variáveis de ambientes conforme as que estão no seu banco de bados.
+obs: Altere o valores de acordo com a sua preferência..
+
+## 🎈 criar o banco e popular as tabelas
 
 6- depois abrir o docker onde está seu banco de dados ou na sua máquina onde está
 o seu banco e criar a nome do banco ex: vuttr ou simplesmente executar o seguinte comando abaixo,
 que automaticamente ele conecta ao seu banco ele já cria o banco com a tabela se tiver
 passado todos os parâmetros na variável de ambiente .env
+
+- > **Migrations e criação da Database:**
 
 ```
 yarn prisma migrate dev
@@ -56,8 +69,8 @@ yarn start:dev
 ## Rotas da aplicação
 
 - A aplicação executa em http://localhost/3000
-- `/tools?tag=TypeScript -> utilizando o método GET nessa rota irá listar todas ferramentas que tem a tag 'TypeScript'`
 
+- `/tools?tag=TypeScript -> utilizando o método GET nessa rota irá listar todas ferramentas que tem a tag 'TypeScript'`
   ° GET http://localhost:3000/tools/:tags - Listar por tags
 
 - `/tools -> utilizando o método POST nessa rota irá criar uma ferramenta `
@@ -65,33 +78,25 @@ yarn start:dev
 
 - `/tools -> utilizando o método GET nessa rota irá listar todas as ferramentas `
   ° GET http://localhost:3000/tools - Listar todas as ferramentas cadastradas no banco.
-- `/tools/:id -> utilizando o método GET nessa rota irá listar a ferramenta de acordo com o id que foi informado`
 
-° GET http://localhost:3000/tools/:id - Listar ferramenta por Id.
+- `/tools/:id -> utilizando o método GET nessa rota irá listar a ferramenta de acordo com o id que foi informado`
+  ° GET http://localhost:3000/tools/:id - Listar ferramenta por Id.
 
 - `/tools/:id -> utilizando o método PUT nessa rota irá alterar uma ferramenta de acordo com o id que foi informado`
   ° PUT http://localhost:3000/tools/:id - Atualizar a ferramenta conforme o campo que desejar
+
 - `/tools/:id -> utilizando o método DELETE nessa rota irá excluir a ferramenta de acordo com o id que foi informado`
+  ° DELETE http://localhost:3000/tools/:id - Apagarar a ferramaenta conforme o id que passar.
 
-° DELETE http://localhost:3000/tools/:id - Apagarar a ferramaenta conforme o id que passar.
+Para mais informaçoes de como utilizar essas rotas e quais parâmetros utilizar, tem a documentação da API, que se encontra dentro da pasta do projeto, no arquivo de **api.apib** para as rotas blz.
 
-Para mais informaçoes de como utilizar essas rotas e quais parâmetros utilizar, tem a documentação da API, que se encontra dentro da pasta do projeto, no arquivo de **api.apib**
+## `Como usar`
 
-## 🔧 Executando os testes
+Com a aplicação em execução, você pode acessar a documentação da aplicação, [clique aqui](http://localhost:3000/api-docs)
 
-```
-yarn test
-```
+## `VUTTR (Front-end)`
 
-### Sobre os testes
-
-Para essa aplicação, implementei os seguintes testes:
-
-- **`should be able to create a new tool`**: Para que esse teste passe, a aplicação deve permitir que uma ferramenta seja criada, e retorne um json com a ferramenta criada.
-- **`should be able to list the tools`**: Para que esse teste passe, a aplicação deve permitir que seja retornado um array contendo todas as ferramentas.
-- **`should be able to list tools with tag filter`**: Para que esse teste passe, sua aplicação deve permitir que seja retornado um objeto contendo todas as ferramentas que contém a tag passada na rota.
-- **`should be able to delete a tool`**: Para que esse teste passe, a aplicação deve permitir deletar uma ferramenta.
-- **`should not be able to delete a nonexistent tool`**: Para que esse teste passe, a aplicação não deve permitir deletar uma ferramenta que não exista.
+Para execução complenta do projeto, faça o download do [VUTTR (Front-end)](https://github.com/WarleyCoutinho/Desafio-Front-End.git), siga os passos de execução, e aproveite.
 
 ### ⛏️ Tecnologias utilizadas na aplicação
 

@@ -152,7 +152,6 @@
       }
     }
   },
-
   "definitions": {
     "Tool": {
       "type": "object",
