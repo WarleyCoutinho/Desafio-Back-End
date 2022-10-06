@@ -2,6 +2,8 @@
 
 Este projeto é um desafio proposto pela [Kingspan Isoeste](https://kingspan-isoeste.com.br)
 
+Projeto Rodando em produção [Vuttur-Back](https://tool-back-end.herokuapp.com/)
+
 # VUTTR (Very Useful Tools to Remember - Ferramentas muito úteis para lembrar)
 
 Sua tarefa é construir uma API e banco de dados para a aplicação VUTTR (Very Useful Tools to Remember).A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
@@ -92,7 +94,8 @@ Para mais informaçoes de como utilizar essas rotas e quais parâmetros utilizar
 
 ## `Como usar`
 
-Com a aplicação em execução, você pode acessar a documentação da aplicação, [clique aqui](http://localhost:3000/api-docs)
+Com a aplicação em execução, você pode acessar a documentação da aplicação, [clique aqui](https://app.swaggerhub.com/apis/WARLEYCOUTINHO_1/desafio-back_end_vuttr_very_useful_tools_to_remember/0.0.1)
+documentação da aplicação em Word, [clique aqui](https://docs.google.com/document/d/1a5Y_jxJUwJ3J5cspV59Q3pwZPFqOH5bUtY0DZIjEDfs/edit?usp=sharing)
 
 ## `VUTTR (Front-end)`
 
